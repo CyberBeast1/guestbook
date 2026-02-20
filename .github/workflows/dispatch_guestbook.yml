@@ -1,0 +1,16 @@
+name: Guestbook Bot
+on:
+  workflow_dispatch:
+    types: [add-guestbook-comment]
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post Comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: 1
+          body: |
+            **Guestbook Entry:**
+            ${{ github.event.client_payload.message }}
