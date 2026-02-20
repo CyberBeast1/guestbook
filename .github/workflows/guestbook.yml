@@ -1,15 +1,16 @@
 name: Guestbook
 
 on:
-  types: [created, edited, deleted]
+  issue_comment:
+    types: [created, edited, deleted]
 
 permission:
-  content: write
+  contents: write
 
 jobs:
   update_guestbook:
     name: Update Guestbook
-    if: ${{github.event.issue.title == "Guestbook"}}
+    if: ${{github.event.issue.title == 'Guestbook'}}
     runs-on: ubuntu-latest
 
     steps:
