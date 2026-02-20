@@ -1,7 +1,11 @@
 name: Guestbook Bot
 on:
   workflow_dispatch:
-    types: [add-guestbook-comment]
+    inputs:
+      guestbook_message:
+        description: 'Leave your message for the guestbook'
+        required: true
+        default: 'I was here!'
 
 jobs:
   add-comment:
@@ -10,7 +14,9 @@ jobs:
       - name: Post Comment
         uses: peter-evans/create-or-update-comment@v3
         with:
-          issue-number: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: 1  # Ensure this is your actual Issue #
           body: |
             **Guestbook Entry:**
-            ${{ github.event.client_payload.message }}
+            ${{ github.event.inputs.guestbook_message }}
+            — *Sent via GitHub Actions*
