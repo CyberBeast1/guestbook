@@ -8,4 +8,4 @@
 
 [![Add a Note](https://img.shields.io/badge/Add%20a%20Note-Click%20Here-brightgreen)](https://github.com/CyberBeast1/guestbook/issues/1)
 
-[![Add Note m2](https://img.shields.io/badge/Add%20a%20Note-Click%20Here-brightred)](https://github.com/OWNER/REPO/actions/workflows/guestbook.yml)
+[![Add Note m2](https://img.shields.io/badge/Add%20a%20Note-Click%20Here-brightred)](https://github.com/CyberBeast1/guestbook/actions/workflows/dispatch_guestbook.yml)
